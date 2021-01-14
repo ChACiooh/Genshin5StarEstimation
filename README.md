@@ -2,7 +2,7 @@
 Program which estimates probabilities of pick 5 star characters in n tries on Genshin Impact.
 
 ## Developer
-- Hanyang University student whose major is Computer Software Department.
+- Hanyang University Seoul Korea student whose major is Computer Software Department.
 - contact : @7A4ys(twitter) / email:honoki47@gmail.com
 
 ## Purpose
