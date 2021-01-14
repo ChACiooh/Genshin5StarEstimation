@@ -6,7 +6,7 @@ Program which estimates probabilities of pick 5 star characters in n tries on Ge
 - contact : @7A4ys(twitter) / email:honoki47@gmail.com
 
 ## Purpose
-People who wants to pick new 5 star character always have money issue. So, when people know how much money they have and consider how many they want to pick, this will be helpful.
+People who want to pick new 5 star character always have money issue. So, when people know how much money they have and consider how many they want to pick, this will be helpful.
 
 ## Usage
 1. input stack value of your gacha (1 ~ 89)
