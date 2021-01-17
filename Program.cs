@@ -42,12 +42,18 @@ namespace src
             for(int n = 1; n <= 7; ++n)
             {   
                 string file_name = ""+n+(getPic ? "_basic" : "_pick")+".txt";
+                //string fn_likelihood = "ll"+n+(getPic ? "_basic" : "_pick")+".txt";
                 StreamWriter sw = new StreamWriter(file_name);
+                //StreamWriter swll = new StreamWriter(fn_likelihood);
                 for(int i = 1; i <= 1260; ++i)
                 {
-                    sw.WriteLine("{0}:{1}%", i, cp.GetDP(n, i)*100);
+                    double probability = cp.GetDP(n, i) * 100;
+                    sw.WriteLine("{0}:{1}%", i, probability);
+                    if(probability >= 100.0)    break;
+                    //swll.WriteLine("{0}:{1}%", i, cp.likelihood(n, i)*100);
                 }
                 sw.Close();
+                //swll.Close();
             }
            
         }

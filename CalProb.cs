@@ -299,5 +299,10 @@ namespace src
             }
             return res;
         }
+
+        public double likelihood(int n, int i)
+        {
+            return dp[n * 2 - 1][i].GetProb() - dp[n * 2 - 1][i-1].GetProb();
+        }
     }
 }
