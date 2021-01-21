@@ -1,8 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace src
 {
@@ -39,22 +35,20 @@ namespace src
 
             Console.WriteLine("{0}연차 내로 뽑을 확률 = {1}%", gacha, result * 100);
 
-            for(int n = 1; n <= 7; ++n)
-            {   
-                string file_name = ""+n+(getPic ? "_basic" : "_pick")+".txt";
-                //string fn_likelihood = "ll"+n+(getPic ? "_basic" : "_pick")+".txt";
-                StreamWriter sw = new StreamWriter(file_name);
-                //StreamWriter swll = new StreamWriter(fn_likelihood);
-                for(int i = 1; i <= 1260; ++i)
-                {
-                    double probability = cp.GetDP(n, i) * 100;
-                    sw.WriteLine("{0}:{1}%", i, probability);
-                    if(probability >= 100.0)    break;
-                    //swll.WriteLine("{0}:{1}%", i, cp.likelihood(n, i)*100);
-                }
-                sw.Close();
-                //swll.Close();
+            double mean = 0.0;
+            int i = 1;
+            for(; i <= CalProb.MAX_GACHA; ++i)
+            {
+                //
+                double tmp = cp.GetDP(ndol, i);
+                mean += tmp;
+                if(tmp >= 100.0)    break;
             }
+            mean /= i;
+
+            Console.WriteLine("평균 : {0}", mean);
+
+            //cp.PrintDP(ndol, getPic);
            
         }
     }

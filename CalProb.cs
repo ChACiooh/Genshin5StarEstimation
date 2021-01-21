@@ -1,4 +1,8 @@
 using System;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace src
 {
@@ -14,7 +18,7 @@ namespace src
         private static int GACHA_SIZE = 90;
         private static int WANT = 1;
         private static int NOWANT = 0;
-        private static int MAX_GACHA = 1260;
+        public static int MAX_GACHA = 1260;
 
         private ProbNStack[][] dp;  // DOL_SIZE * MAX_GACHA
 
@@ -300,9 +304,54 @@ namespace src
             return res;
         }
 
-        public double likelihood(int n, int i)
+        public void PrintDP(int ndol, bool getPic)
         {
-            return dp[n * 2 - 1][i].GetProb() - dp[n * 2 - 1][i-1].GetProb();
+            for(int n = 1; n <= 7; ++n)
+            {   
+                string file_name = ""+n+(getPic ? "_basic" : "_pick")+".txt";
+                //string fn_likelihood = "ll"+n+(getPic ? "_basic" : "_pick")+".txt";
+                StreamWriter sw = new StreamWriter(file_name);
+                //StreamWriter swll = new StreamWriter(fn_likelihood);
+                for(int i = 1; i <= CalProb.MAX_GACHA; ++i)
+                {
+                    double probability = GetDP(n, i) * 100;
+                    sw.WriteLine("{0}:{1}%", i, probability);
+                    if(probability >= 100.0)    break;
+                    //swll.WriteLine("{0}:{1}%", i, cp.likelihood(n, i, getPic)*100);
+                }
+                sw.Close();
+                //swll.Close();
+            }
+        }
+
+        public double likelihood(int n, int gacha, bool getPic)
+        {
+            //double next_prob = pic5Nth(p_, q_, gacha);
+            //double a = (1.0 - dp[n * 2 - 1][gacha-1].GetProb()) * next_prob;
+            //double b = (1.0 - dp[(n-1) * 2 - 1][gacha-1].GetProb()) * next_prob;
+            double a = dp[n*2-1][gacha].GetProb() - dp[n*2-1][gacha-1].GetProb();
+            double p_ = p, q_ = q;
+
+            if(getPic)
+            {
+                p_ /= 2;
+                q_ /= 2;
+            }
+
+            double b = 0.0;
+
+            if(n > 1)
+            {
+                b = dp[(n-1)*2-1][gacha-1].GetProb();
+            }
+            else if (n == 1)
+            {
+                for(int i = 1; i < gacha; ++i)
+                {
+                    b += (1 - pic5Nth(p_, q_, i));
+                }
+            }
+            return (a+b) * pic5Nth(p_, q_, gacha);
         }
     }
 }
