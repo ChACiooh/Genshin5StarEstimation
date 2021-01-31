@@ -14,7 +14,7 @@ People who want to pick new 5 star character always have money issue. So, when p
 3. input gachas you can try.
 
 ## Output = probability of picking n characters in k tries(k: output %).
-They follow CDF model.
+They follow CDF model(https://en.wikipedia.org/wiki/Cumulative_distribution_function).
 - n_basic.txt : basical probs with s stack you provided.
 - n_pick.txt : first gacha gives pick-up character obviously, and probs based on it.
 - 1~7.txt : primary information s.t. 0 stack and never tried gacha system(or got pick-up character previous gacha stage). 
