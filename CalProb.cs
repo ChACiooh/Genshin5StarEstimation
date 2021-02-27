@@ -325,6 +325,11 @@ namespace src
             }
         }
 
+        public void PrintDPCSV(int stack, int ndol, bool getPic)
+        {
+            // TODO
+        }
+
         public double likelihood(int n, int gacha, bool getPic)
         {
             //double next_prob = pic5Nth(p_, q_, gacha);

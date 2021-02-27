@@ -35,6 +35,7 @@ namespace src
 
             Console.WriteLine("{0}연차 내로 뽑을 확률 = {1}%", gacha, result * 100);
 
+            /*
             double mean = 0.0;
             int i = 1;
             for(; i <= CalProb.MAX_GACHA; ++i)
@@ -47,9 +48,10 @@ namespace src
             mean /= i;
 
             Console.WriteLine("평균 : {0}%", mean * 100);
-
-            cp.PrintDP(stack, ndol, getPic);
-           
+            */
+            PrintCS pcs = new PrintCS(cp);
+            pcs.PrintTxt(stack, ndol, getPic);
+            pcs.PrintXml(stack, ndol, getPic);
         }
     }
 }
