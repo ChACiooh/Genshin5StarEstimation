@@ -9,7 +9,7 @@ Program which estimates probabilities of pick 5 star characters that you focused
 People who want to pick new 5 star character always have money issue. So, when people know how much money they have and consider how many they want to pick, this will be helpful.
 
 ## Note
-It is necessary to make directories: ./result_txt and ./result_xmls
+It is necessary to make directories: ./result_txt and ./result_xls
 
 ## Usage
 1. input stack value of your gacha (1 ~ 89)
