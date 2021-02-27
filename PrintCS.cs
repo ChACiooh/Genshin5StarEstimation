@@ -43,7 +43,7 @@ namespace src
 
         public void PrintXml(int stack, int ndol, bool getPic)
         {
-            String path = "./result_xls/";
+            String path = "./result_xml/";
             for(int k = 1; k <= ndol; ++k)
             {
                 String file_name = path + k + "_" + (getPic ? "basic" : "pick") + "_" + stack + ".xml";
