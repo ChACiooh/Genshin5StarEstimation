@@ -9,7 +9,8 @@ namespace src
     class CalProb
     {
         private static double p = 0.006;    // probability of win 5 star.
-        private static double q = 0.3235613866818617;   // probability of win 5 star from 76th.
+        private static double q = 0.3235613866818617;   // probability of win 5 star from AMPLIFY-th.
+        private static int AMPLIFY = 74;
         //private double p_, q_;
 
         private ProbNStack[][] want, nowant;
@@ -112,11 +113,11 @@ namespace src
         private double calCondP(double p_, double q_, int stack_)
         {
             double condp = pic5Nth(p_, q_, stack_);
-            if(stack_ >= 76 && stack_ < GACHA_SIZE)
+            if(stack_ >= AMPLIFY && stack_ < GACHA_SIZE)
             {
                 condp /= q_;
             }
-            else if(stack_ < 76)
+            else if(stack_ < AMPLIFY)
             {
                 condp /= p_;
             }
@@ -279,17 +280,17 @@ namespace src
         public double pic5Nth(double p_, double q_, int nth)
         {
             double pk = 0.0;
-            if(nth < 76)
+            if(nth < AMPLIFY)
             {
                 pk = pow(1-p, nth - 1) * p_;
             }
             else if(nth < GACHA_SIZE)
             {
-                pk = pow(1-p, 75) * pow(1-q, nth - 76) * q_;
+                pk = pow(1-p, AMPLIFY - 1) * pow(1-q, nth - AMPLIFY) * q_;
             }
             else if(nth >= GACHA_SIZE)
             {
-                pk = pow(1-p, 75) * pow(1-q, GACHA_SIZE - 76);
+                pk = pow(1-p, AMPLIFY - 1) * pow(1-q, GACHA_SIZE - AMPLIFY);
             }
 
             return pk;
@@ -304,11 +305,11 @@ namespace src
             return res;
         }
 
-        public void PrintDP(int ndol, bool getPic)
+        public void PrintDP(int stack, int ndol, bool getPic)
         {
             for(int n = 1; n <= 7; ++n)
             {   
-                string file_name = ""+n+(getPic ? "_basic" : "_pick")+".txt";
+                string file_name = ""+n+(getPic ? "_basic_" : "_pick_")+stack+".txt";
                 //string fn_likelihood = "ll"+n+(getPic ? "_basic" : "_pick")+".txt";
                 StreamWriter sw = new StreamWriter(file_name);
                 //StreamWriter swll = new StreamWriter(fn_likelihood);

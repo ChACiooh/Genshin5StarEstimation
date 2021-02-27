@@ -46,9 +46,9 @@ namespace src
             }
             mean /= i;
 
-            Console.WriteLine("평균 : {0}", mean);
+            Console.WriteLine("평균 : {0}%", mean * 100);
 
-            //cp.PrintDP(ndol, getPic);
+            cp.PrintDP(stack, ndol, getPic);
            
         }
     }
