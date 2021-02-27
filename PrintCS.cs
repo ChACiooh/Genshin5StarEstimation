@@ -22,7 +22,7 @@ namespace src
 
         PrintCS() {}
 
-        public void PrintDP(int stack, int ndol, bool getPic)
+        public void PrintTxt(int stack, int ndol, bool getPic)
         {
             for(int n = 1; n <= 7; ++n)
             {   
@@ -32,8 +32,10 @@ namespace src
                 for(int i = 1; i <= CalProb.MAX_GACHA; ++i)
                 {
                     double probability = cp.GetDP(n, stack + i) * 100;
+                    bool flag = probability >= 99.99999;
+                    if(flag)    probability = 100.0;
                     sw.WriteLine("{0}:{1}%", i, probability);
-                    if(probability >= 100.0)    break;
+                    if(flag)    break;
                 }
                 sw.Close();
             }
@@ -53,6 +55,8 @@ namespace src
                 for(int j = 1; j <= CalProb.MAX_GACHA; ++j)
                 {
                     double probability = cp.GetDP(k, stack + j) * 100;
+                    bool flag = probability >= 99.99999;
+                    if(flag)    probability = 100.0;
                     XmlNode n_gacha = xdoc.CreateElement("Gacha");
                     XmlAttribute n_gacha_attr = xdoc.CreateAttribute("Id");
                     n_gacha_attr.Value = "" + k + "_" + j;
@@ -63,7 +67,7 @@ namespace src
                     n_gacha.AppendChild(item);
 
                     root.AppendChild(n_gacha);
-                    if(probability >= 100.0)    break;
+                    if(flag)    break;
                 }
                 
                 // XML 파일 저장
