@@ -2,7 +2,7 @@
 Program which estimates probabilities of pick 5 star characters in n tries on Genshin Impact.
 
 ## Developer
-- CSE major who loves Hu-Tao in Genshin Impact very much.
+- CSE major who loves Hu-Tao in Genshin Impact so much.
 - contact : @7A4ys(twitter) / email:honoki47@gmail.com
 
 ## Purpose
