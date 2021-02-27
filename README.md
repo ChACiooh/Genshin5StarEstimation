@@ -1,5 +1,5 @@
 # Genshin5StarEstimation
-Program which estimates probabilities of pick 5 star characters in n tries on Genshin Impact.
+Program which estimates probabilities of pick 5 star characters that you focused on in n tries on Genshin Impact.
 
 ## Developer
 - CSE major who loves Hu-Tao in Genshin Impact so much.
