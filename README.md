@@ -16,7 +16,6 @@ People who want to pick new 5 star character always have money issue. So, when p
 ## Output = probability of picking n characters in k tries(k: output %).
 - n_basic_s.txt : basical probs with s stack you provided.
 - n_pick_s.txt : first gacha with s stack gives pick-up character obviously, and probs based on it.
-- 1~7.txt : primary information s.t. 0 stack and never tried gacha system(or got pick-up character previous gacha stage).
 
 ## Principle
 Previous result of the gacha affects next gacha. And from 76th to 89th tries in each stage of gacha have another probability. Of course, 100% on k >= 90, k is the number of tries. It says Dynamic Programming needed because such system has previous result affects next output. You can consider recursive algorithm but it has the time complexity of O(N^M). However, DP algorithm changes it into O(N\*M\*K), N and K is very less than M.
