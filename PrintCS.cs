@@ -71,7 +71,13 @@ namespace src
                 }
                 
                 // XML 파일 저장
-                xdoc.Save(@file_name);
+                try
+                {
+                    xdoc.Save(@file_name);
+                } catch (System.IO.DirectoryNotFoundException) {
+                    System.IO.Directory.CreateDirectory(path);
+                    xdoc.Save(@file_name);
+                }
             }
         }
     }
