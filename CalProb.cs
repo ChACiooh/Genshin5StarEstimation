@@ -92,8 +92,11 @@ namespace src
                 want[1][j].SetProb(picWhatIwantInN(stack_, j - stack_, getPic));
                 nowant[1][j].SetProb(picWhatIdonWantInN(stack_, j - stack_, getPic));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 
                 //want[1][j].SetProb(pic5Nth(p_, q_, j));
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                 ++j;
