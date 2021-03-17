@@ -112,14 +112,16 @@ namespace src
 
         private double calCondP(double p_, double q_, int stack_)
         {
+            stack_ %= GACHA_SIZE;
+            if(stack_ <= 0) return 1.0;
             double condp = pic5Nth(p_, q_, stack_);
             if(stack_ >= AMPLIFY && stack_ < GACHA_SIZE)
             {
-                condp /= q_;
+                condp = condp / q_ * (1-q_);
             }
             else if(stack_ < AMPLIFY)
             {
-                condp /= p_;
+                condp = condp / p_ * (1-p_);
             }
             return condp;
         }
@@ -160,23 +162,25 @@ namespace src
             return want[0][gacha].GetProb();
         }
 
+        /***
+        *   전체 가챠 스테이지에서 사용하는 가챠권 j개 중 k개를 소모했을 때
+        ***/
         private void gen_dp(int stack_, bool getPic)
         {
-            for(int j = 1; j <= MAX_GACHA;++j)
+            /* 첫 스테이지 */
+            for(int j = 1; j <= MAX_GACHA;++j) // 전체 가챠 스테이지에서 사용하는 가챠권 j개
             {   
                 dp[1][j].SetProb(first_pic(j, WANT));    // 기본 첫 스테이지
                 dp[1][j].SetStack(j);
-                
                 if(j > GACHA_SIZE && getPic)
                 {
-                    for(int k = 1; k < j && k <= GACHA_SIZE; ++k)
+                    for(int k = 1; k < j && k <= GACHA_SIZE; ++k)   // 이번 가챠 스테이지에서 사용하는 가차권 k개
                     {
                         double dp1j = dp[1][j].GetProb();
                         double np = picWhatIdonWantInN(stack_, j-k, getPic) * picWhatIwantInN(0, k, false);
                         double dn = dp[1][j-k].GetProb() + np;
                         
-                        if(dp1j < dn)
-                        {
+                        if(dp1j < dn) {
                             dp[1][j].SetProb(dn);
                             dp[1][j].SetStack(k);
                         }
@@ -184,9 +188,11 @@ namespace src
                     if(dp[1][j].GetProb() >= 1.0) dp[1][j].SetProb(1.0);
                 }
             }
+
+            /* 원하는 돌파 수까지 구하는 과정 */
             for(int n = 2; n <= DOL_SIZE; ++n)
             {
-                for(int j = 1; j <= MAX_GACHA; ++j) // 전체 가챠 스테이지에서 사용하는 가차권 j개
+                for(int j = 1; j <= MAX_GACHA; ++j) // 전체 가챠 스테이지에서 사용하는 가챠권 j개
                 {
                     for(int k = 1; k < j && k <= GACHA_SIZE; ++k)   // 이번 가챠 스테이지에서 사용하는 가차권 k개
                     {
@@ -214,9 +220,9 @@ namespace src
                         }
                         if(dp[n][j].GetProb() >= 1.0) dp[n][j].SetProb(1.0);
                         dp[n][j].SetStack(k);
-                    }
-                }
-            }
+                    }   // for k end
+                }   // for j end
+            }   // for n end
         }
 
         public double DoubleMax(double a, double b)
@@ -232,22 +238,15 @@ namespace src
         public double picWhatIdonWantInN(int stack_, int nyeoncha, bool getPic)
         {
             if(nyeoncha <= 0)   return 0.0;
-            if(!getPic)
-            {
-                return 0.0;
-            }
+            if(!getPic) return 0.0;
             else if(stack_ + nyeoncha >= GACHA_SIZE)    return 0.5;
 
-            double prob = 0.0, p_, q_;
+            double prob = 0.0, p_ = p / 2, q_ = q / 2;
 
-            p_ = p / 2;
-            q_ = q / 2;
-
-            for(int i = stack_ + 1; i <= stack_ + nyeoncha && i <= GACHA_SIZE; ++i)
-            {
+            for(int i = stack_ + 1; i <= stack_ + nyeoncha && i <= GACHA_SIZE; ++i) {
                 prob += pic5Nth(p_, q_, i);
             }
-
+            if(prob >= 0.9999999) prob = 1.0;
             return prob;
         }
 
@@ -256,30 +255,26 @@ namespace src
         {
             if(nyeoncha <= 0)   return 0.0;
             double prob = 0.0;
-            double p_, q_;
-            if(getPic)
-            {
-                p_ = p / 2;
-                q_ = q / 2;
-            }
-            else
-            {
-                p_ = p;
-                q_ = q;
-            }
+            double p_ = p, q_ = q;
+            if(getPic) {
+                p_ /= 2;
+                q_ /= 2;
+            } 
 
             double condp = calCondP(p_, q_, stack_);
-            
             for(int i = stack_ + 1; i <= stack_ + nyeoncha && i <= GACHA_SIZE; ++i) {
                 prob += pic5Nth(p_, q_, i);
             }
-
-            return prob / condp;
+            if(prob >= 0.9999999) prob = 1.0;
+            if(condp != 0.0)    return prob / condp;
+            return prob;
         }
 
         public double pic5Nth(double p_, double q_, int nth)
         {
             double pk = 0.0;
+            if(nth <= 0)    return 0.0;
+
             if(nth < AMPLIFY)
             {
                 pk = pow(1-p, nth - 1) * p_;
@@ -291,6 +286,7 @@ namespace src
             else if(nth >= GACHA_SIZE)
             {
                 pk = pow(1-p, AMPLIFY - 1) * pow(1-q, GACHA_SIZE - AMPLIFY);
+                if(p != p_) pk *= 0.5;
             }
 
             return pk;
@@ -303,61 +299,6 @@ namespace src
                 res *= under;
             }
             return res;
-        }
-
-        public void PrintDP(int stack, int ndol, bool getPic)
-        {
-            for(int n = 1; n <= 7; ++n)
-            {   
-                string file_name = ""+n+(getPic ? "_basic_" : "_pick_")+stack+".txt";
-                //string fn_likelihood = "ll"+n+(getPic ? "_basic" : "_pick")+".txt";
-                StreamWriter sw = new StreamWriter(file_name);
-                //StreamWriter swll = new StreamWriter(fn_likelihood);
-                for(int i = 1; i <= CalProb.MAX_GACHA; ++i)
-                {
-                    double probability = GetDP(n, i) * 100;
-                    sw.WriteLine("{0}:{1}%", i, probability);
-                    if(probability >= 100.0)    break;
-                    //swll.WriteLine("{0}:{1}%", i, cp.likelihood(n, i, getPic)*100);
-                }
-                sw.Close();
-                //swll.Close();
-            }
-        }
-
-        public void PrintDPCSV(int stack, int ndol, bool getPic)
-        {
-            // TODO
-        }
-
-        public double likelihood(int n, int gacha, bool getPic)
-        {
-            //double next_prob = pic5Nth(p_, q_, gacha);
-            //double a = (1.0 - dp[n * 2 - 1][gacha-1].GetProb()) * next_prob;
-            //double b = (1.0 - dp[(n-1) * 2 - 1][gacha-1].GetProb()) * next_prob;
-            double a = dp[n*2-1][gacha].GetProb() - dp[n*2-1][gacha-1].GetProb();
-            double p_ = p, q_ = q;
-
-            if(getPic)
-            {
-                p_ /= 2;
-                q_ /= 2;
-            }
-
-            double b = 0.0;
-
-            if(n > 1)
-            {
-                b = dp[(n-1)*2-1][gacha-1].GetProb();
-            }
-            else if (n == 1)
-            {
-                for(int i = 1; i < gacha; ++i)
-                {
-                    b += (1 - pic5Nth(p_, q_, i));
-                }
-            }
-            return (a+b) * pic5Nth(p_, q_, gacha);
         }
     }
 }
