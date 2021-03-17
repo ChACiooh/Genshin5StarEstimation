@@ -1,0 +1,410 @@
+<Character_Gacha>
+  <Gacha Id="1_1">
+    <Prob>0.2990972918756269%</Prob>
+  </Gacha>
+  <Gacha Id="1_2">
+    <Prob>0.5964%</Prob>
+  </Gacha>
+  <Gacha Id="1_3">
+    <Prob>0.891918891875627%</Prob>
+  </Gacha>
+  <Gacha Id="1_4">
+    <Prob>1.1856646704%</Prob>
+  </Gacha>
+  <Gacha Id="1_5">
+    <Prob>1.4776479742532271%</Prob>
+  </Gacha>
+  <Gacha Id="1_6">
+    <Prob>1.7678793782833349%</Prob>
+  </Gacha>
+  <Gacha Id="1_7">
+    <Prob>2.0563693938892618%</Prob>
+  </Gacha>
+  <Gacha Id="1_8">
+    <Prob>2.343128469401553%</Prob>
+  </Gacha>
+  <Gacha Id="1_9">
+    <Prob>2.628166990460771%</Prob>
+  </Gacha>
+  <Gacha Id="1_10">
+    <Prob>2.911495280393633%</Prob>
+  </Gacha>
+  <Gacha Id="1_11">
+    <Prob>3.193123600586899%</Prob>
+  </Gacha>
+  <Gacha Id="1_12">
+    <Prob>3.473062150859004%</Prob>
+  </Gacha>
+  <Gacha Id="1_13">
+    <Prob>3.7513210698294768%</Prob>
+  </Gacha>
+  <Gacha Id="1_14">
+    <Prob>4.0279104352861275%</Prob>
+  </Gacha>
+  <Gacha Id="1_15">
+    <Prob>4.3028402645500385%</Prob>
+  </Gacha>
+  <Gacha Id="1_16">
+    <Prob>4.576120514838365%</Prob>
+  </Gacha>
+  <Gacha Id="1_17">
+    <Prob>4.847761083624962%</Prob>
+  </Gacha>
+  <Gacha Id="1_18">
+    <Prob>5.11777180899884%</Prob>
+  </Gacha>
+  <Gacha Id="1_19">
+    <Prob>5.386162470020474%</Prob>
+  </Gacha>
+  <Gacha Id="1_20">
+    <Prob>5.652942787075977%</Prob>
+  </Gacha>
+  <Gacha Id="1_21">
+    <Prob>5.918122422229148%</Prob>
+  </Gacha>
+  <Gacha Id="1_22">
+    <Prob>6.1817109795714%</Prob>
+  </Gacha>
+  <Gacha Id="1_23">
+    <Prob>6.443718005569599%</Prob>
+  </Gacha>
+  <Gacha Id="1_24">
+    <Prob>6.704152989411807%</Prob>
+  </Gacha>
+  <Gacha Id="1_25">
+    <Prob>6.963025363350964%</Prob>
+  </Gacha>
+  <Gacha Id="1_26">
+    <Prob>7.220344503046486%</Prob>
+  </Gacha>
+  <Gacha Id="1_27">
+    <Prob>7.476119727903834%</Prob>
+  </Gacha>
+  <Gacha Id="1_28">
+    <Prob>7.730360301412037%</Prob>
+  </Gacha>
+  <Gacha Id="1_29">
+    <Prob>7.983075431479191%</Prob>
+  </Gacha>
+  <Gacha Id="1_30">
+    <Prob>8.234274270765942%</Prob>
+  </Gacha>
+  <Gacha Id="1_31">
+    <Prob>8.483965917016974%</Prob>
+  </Gacha>
+  <Gacha Id="1_32">
+    <Prob>8.7321594133905%</Prob>
+  </Gacha>
+  <Gacha Id="1_33">
+    <Prob>8.978863748785784%</Prob>
+  </Gacha>
+  <Gacha Id="1_34">
+    <Prob>9.224087858168696%</Prob>
+  </Gacha>
+  <Gacha Id="1_35">
+    <Prob>9.46784062289531%</Prob>
+  </Gacha>
+  <Gacha Id="1_36">
+    <Prob>9.710130871033567%</Prob>
+  </Gacha>
+  <Gacha Id="1_37">
+    <Prob>9.950967377682991%</Prob>
+  </Gacha>
+  <Gacha Id="1_38">
+    <Prob>22.860607659478475%</Prob>
+  </Gacha>
+  <Gacha Id="1_39">
+    <Prob>31.59318683013219%</Prob>
+  </Gacha>
+  <Gacha Id="1_40">
+    <Prob>37.50024057502005%</Prob>
+  </Gacha>
+  <Gacha Id="1_41">
+    <Prob>41.495999819007714%</Prob>
+  </Gacha>
+  <Gacha Id="1_42">
+    <Prob>44.19888566116386%</Prob>
+  </Gacha>
+  <Gacha Id="1_43">
+    <Prob>46.027222012189185%</Prob>
+  </Gacha>
+  <Gacha Id="1_44">
+    <Prob>47.263979318155904%</Prob>
+  </Gacha>
+  <Gacha Id="1_45">
+    <Prob>48.10056971521511%</Prob>
+  </Gacha>
+  <Gacha Id="1_46">
+    <Prob>48.66647176331711%</Prob>
+  </Gacha>
+  <Gacha Id="1_47">
+    <Prob>49.04926976000912%</Prob>
+  </Gacha>
+  <Gacha Id="1_48">
+    <Prob>49.308209106072425%</Prob>
+  </Gacha>
+  <Gacha Id="1_49">
+    <Prob>49.48336567825699%</Prob>
+  </Gacha>
+  <Gacha Id="1_50">
+    <Prob>49.60184834705908%</Prob>
+  </Gacha>
+  <Gacha Id="1_51">
+    <Prob>49.6819945992458%</Prob>
+  </Gacha>
+  <Gacha Id="1_52">
+    <Prob>49.736208618937624%</Prob>
+  </Gacha>
+  <Gacha Id="1_53">
+    <Prob>49.77288107524038%</Prob>
+  </Gacha>
+  <Gacha Id="1_54">
+    <Prob>49.84954864593782%</Prob>
+  </Gacha>
+  <Gacha Id="1_55">
+    <Prob>51.39947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_56">
+    <Prob>51.69947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_57">
+    <Prob>51.99947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_58">
+    <Prob>52.29947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_59">
+    <Prob>52.599470045716714%</Prob>
+  </Gacha>
+  <Gacha Id="1_60">
+    <Prob>52.89947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_61">
+    <Prob>53.199470045716716%</Prob>
+  </Gacha>
+  <Gacha Id="1_62">
+    <Prob>53.49947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_63">
+    <Prob>53.79947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_64">
+    <Prob>54.099470045716714%</Prob>
+  </Gacha>
+  <Gacha Id="1_65">
+    <Prob>54.39947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_66">
+    <Prob>54.699470045716716%</Prob>
+  </Gacha>
+  <Gacha Id="1_67">
+    <Prob>54.99947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_68">
+    <Prob>55.29947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_69">
+    <Prob>55.599470045716714%</Prob>
+  </Gacha>
+  <Gacha Id="1_70">
+    <Prob>55.89947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_71">
+    <Prob>56.199470045716716%</Prob>
+  </Gacha>
+  <Gacha Id="1_72">
+    <Prob>56.49947004571671%</Prob>
+  </Gacha>
+  <Gacha Id="1_73">
+    <Prob>56.79947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_74">
+    <Prob>57.099470045716714%</Prob>
+  </Gacha>
+  <Gacha Id="1_75">
+    <Prob>57.39947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_76">
+    <Prob>57.699470045716716%</Prob>
+  </Gacha>
+  <Gacha Id="1_77">
+    <Prob>57.99947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_78">
+    <Prob>58.29947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_79">
+    <Prob>58.599470045716714%</Prob>
+  </Gacha>
+  <Gacha Id="1_80">
+    <Prob>58.89947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_81">
+    <Prob>59.199470045716716%</Prob>
+  </Gacha>
+  <Gacha Id="1_82">
+    <Prob>59.49947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_83">
+    <Prob>59.79947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_84">
+    <Prob>60.09947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_85">
+    <Prob>60.39947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_86">
+    <Prob>60.69947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_87">
+    <Prob>60.99947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_88">
+    <Prob>61.29947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_89">
+    <Prob>61.59947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_90">
+    <Prob>61.89947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_91">
+    <Prob>62.19947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_92">
+    <Prob>62.49947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_93">
+    <Prob>62.799470045716724%</Prob>
+  </Gacha>
+  <Gacha Id="1_94">
+    <Prob>63.09947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_95">
+    <Prob>63.39947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_96">
+    <Prob>63.69947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_97">
+    <Prob>63.99947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_98">
+    <Prob>64.29947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_99">
+    <Prob>64.59947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_100">
+    <Prob>64.89947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_101">
+    <Prob>65.19947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_102">
+    <Prob>65.49947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_103">
+    <Prob>65.79947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_104">
+    <Prob>66.09947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_105">
+    <Prob>66.39947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_106">
+    <Prob>66.69947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_107">
+    <Prob>66.99947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_108">
+    <Prob>67.29947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_109">
+    <Prob>67.59947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_110">
+    <Prob>67.89947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_111">
+    <Prob>68.19947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_112">
+    <Prob>68.49947004571672%</Prob>
+  </Gacha>
+  <Gacha Id="1_113">
+    <Prob>68.79947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_114">
+    <Prob>69.09947004571673%</Prob>
+  </Gacha>
+  <Gacha Id="1_115">
+    <Prob>72.75564562568235%</Prob>
+  </Gacha>
+  <Gacha Id="1_116">
+    <Prob>77.52642721355242%</Prob>
+  </Gacha>
+  <Gacha Id="1_117">
+    <Prob>81.52218645754007%</Prob>
+  </Gacha>
+  <Gacha Id="1_118">
+    <Prob>84.74932733928262%</Prob>
+  </Gacha>
+  <Gacha Id="1_119">
+    <Prob>87.45221318143876%</Prob>
+  </Gacha>
+  <Gacha Id="1_120">
+    <Prob>89.63517588446696%</Prob>
+  </Gacha>
+  <Gacha Id="1_121">
+    <Prob>91.46351223549229%</Prob>
+  </Gacha>
+  <Gacha Id="1_122">
+    <Prob>92.9401524992539%</Prob>
+  </Gacha>
+  <Gacha Id="1_123">
+    <Prob>94.17690980522062%</Prob>
+  </Gacha>
+  <Gacha Id="1_124">
+    <Prob>95.17576629760926%</Prob>
+  </Gacha>
+  <Gacha Id="1_125">
+    <Prob>96.01235669466845%</Prob>
+  </Gacha>
+  <Gacha Id="1_126">
+    <Prob>96.68802179528365%</Prob>
+  </Gacha>
+  <Gacha Id="1_127">
+    <Prob>97.25392384338565%</Prob>
+  </Gacha>
+  <Gacha Id="1_128">
+    <Prob>97.71096980711324%</Prob>
+  </Gacha>
+  <Gacha Id="1_129">
+    <Prob>98.09376780380525%</Prob>
+  </Gacha>
+  <Gacha Id="1_130">
+    <Prob>98.4029313417318%</Prob>
+  </Gacha>
+  <Gacha Id="1_131">
+    <Prob>98.7029313417318%</Prob>
+  </Gacha>
+  <Gacha Id="1_132">
+    <Prob>99.00293134173181%</Prob>
+  </Gacha>
+  <Gacha Id="1_133">
+    <Prob>99.3029313417318%</Prob>
+  </Gacha>
+  <Gacha Id="1_134">
+    <Prob>99.6029313417318%</Prob>
+  </Gacha>
+  <Gacha Id="1_135">
+    <Prob>99.9029313417318%</Prob>
+  </Gacha>
+  <Gacha Id="1_136">
+    <Prob>100%</Prob>
+  </Gacha>
+</Character_Gacha>

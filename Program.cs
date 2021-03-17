@@ -6,8 +6,11 @@ namespace src
     {
         static void Main(string[] args)
         {
+<<<<<<< Updated upstream
             //Console.WriteLine("Hello World!");
             
+=======
+>>>>>>> Stashed changes
             Console.WriteLine("현재 쌓인 스택값 입력:");
             int stack = int.Parse(Console.ReadLine());
             Console.WriteLine("전에 픽업캐 뽑았나?(Y/N)");
@@ -35,6 +38,7 @@ namespace src
 
             Console.WriteLine("{0}연차 내로 뽑을 확률 = {1}%", gacha, result * 100);
 
+<<<<<<< Updated upstream
             /*
             double mean = 0.0;
             int i = 1;
@@ -49,6 +53,14 @@ namespace src
 
             Console.WriteLine("평균 : {0}%", mean * 100);
             */
+=======
+            print(cp, stack, ndol, getPic);
+
+        }
+
+        static void print(CalProb cp, int stack, int ndol, bool getPic)
+        {
+>>>>>>> Stashed changes
             PrintCS pcs = new PrintCS(cp);
             pcs.PrintTxt(stack, ndol, getPic);
             pcs.PrintXml(stack, ndol, getPic);
