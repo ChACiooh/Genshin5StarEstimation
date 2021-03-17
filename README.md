@@ -24,4 +24,4 @@ It is necessary to make directories: ./result_txt and ./result_xls
 Previous result of the gacha affects next gacha. And from 76th to 89th tries in each stage of gacha have another probability. Of course, 100% on k >= 90, k is the number of tries. It says Dynamic Programming needed because such system has previous result affects next output. You can consider recursive algorithm but it has the time complexity of O(N^M). However, DP algorithm changes it into O(N\*M\*K), N and K is very less than M.
 
 ## After
-The developer made this program as C# language, and will make GUI with WPF system.
+These python codes will be uploaded on a web site.
