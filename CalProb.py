@@ -225,7 +225,8 @@ class CalProb:
         while i <= stack_ + nyeoncha and i <= GACHA_SIZE:
             prob += pic5Nth(p_, q_, i)
             i += 1
-
-        return prob / condp
+        if condp != 0.0:
+            return prob / condp
+        return prob
 
  
