@@ -3,7 +3,7 @@ Program which estimates probabilities of pick 5 star characters that you focused
 
 ## Developer
 - CSE major who loves Hu-Tao in Genshin Impact so much.
-- contact : @7A4ys(twitter) / email:honoki47@gmail.com
+- contact : E-mail:xinkis96@gmail.com
 
 ## Purpose
 People who want to pick new 5 star character always have money issue. So, when people know how much money they have and consider how many they want to pick, this will be helpful.
