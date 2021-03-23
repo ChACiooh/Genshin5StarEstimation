@@ -24,7 +24,7 @@ namespace src
 
         public void PrintTxt(int stack, int ndol, bool getPic)
         {
-            for(int n = 1; n <= 7; ++n)
+            for(int n = 1; n <= ndol; ++n)
             {   
                 string path = "./result_txt/";
                 string file_name = path+n+(getPic ? "_basic_" : "_pick_")+stack+".txt";
