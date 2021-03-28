@@ -10,16 +10,16 @@ namespace src
     {
         private static double p = 0.006;    // probability of win 5 star.
         private static double q = 0.3235613866818617;   // probability of win 5 star from AMPLIFY-th.
-        private static int AMPLIFY = 74;
+        public static int AMPLIFY = 74;
         //private double p_, q_;
 
         private ProbNStack[][] want, nowant;
         private double[] prob;
-        private static int DOL_SIZE = 14;
-        private static int GACHA_SIZE = 90;
-        private static int WANT = 1;
-        private static int NOWANT = 0;
-        public static int MAX_GACHA = 1260;
+        public static int DOL_SIZE = 14;
+        public static int GACHA_SIZE = 90;
+        public static int WANT = 1;
+        public static int NOWANT = 0;
+        public static int MAX_GACHA = GACHA_SIZE * DOL_SIZE;
 
         private ProbNStack[][] dp;  // DOL_SIZE * MAX_GACHA
 

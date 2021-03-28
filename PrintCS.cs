@@ -20,8 +20,41 @@ namespace src
             cp = calProb;   // reference 참조인데 사실 상관이 없다. 어차피 이 클래스는 출력용
         }
 
-        PrintCS() {}
+        public PrintCS() {}
 
+        public void PrintTxtAll()
+        {
+            string path = "./result_txt/";
+            string file_name = path + "result.txt";
+            StreamWriter sw = new StreamWriter(file_name);
+            bool getPic = false;
+            for(int stack = 0; stack < CalProb.GACHA_SIZE; ++stack)
+            {
+                cp = new CalProb(stack, getPic);
+                for(int n = 1; n <= CalProb.DOL_SIZE / 2; ++n)
+                {   
+                    // getpic_stack_gacha_ndol
+                    string data = (getPic ? "Y_" : "N_")+stack;
+                    
+                    for(int gacha = 1; gacha + stack <= CalProb.MAX_GACHA; ++gacha)
+                    {
+                        double probability = cp.GetDP(n, stack + gacha) * 100;
+                        bool flag = probability >= 99.99999;
+                        if(flag)    probability = 100.0;
+                        sw.WriteLine("{0}_{1}_{2} {3}%", data, gacha, n, probability);
+                        if(flag)    break;
+                    }
+                    
+                }
+                if(!getPic && stack == CalProb.GACHA_SIZE - 1)
+                {
+                    getPic = !getPic;
+                    stack = -1;
+                }
+            }
+                
+            sw.Close();
+        }
         public void PrintTxt(int stack, int ndol, bool getPic)
         {
             for(int n = 1; n <= ndol; ++n)

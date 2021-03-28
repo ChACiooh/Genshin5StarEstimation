@@ -6,20 +6,25 @@ namespace src
     {
         static void Main(string[] args)
         {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            //Console.WriteLine("Hello World!");
-            
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            Console.WriteLine("현재 쌓인 스택값 입력:");
-            int stack = int.Parse(Console.ReadLine());
+            //input_sequence();
+            file_sequence();
+        }
+
+        static void file_sequence()
+        {
+            print_txt_all();
+        }
+
+        static void input_sequence()
+        {
+            int stack, gacha, ndol;
+            bool getPic;
             Console.WriteLine("전에 픽업캐 뽑았나?(Y/N)");
             var getPic_ = Console.ReadLine();
+            Console.WriteLine("현재 쌓인 스택값 입력:");
+            stack = int.Parse(Console.ReadLine());
 
-            bool getPic = (getPic_[0] == 'y' || getPic_[0] == 'Y');
+            getPic = (getPic_[0] == 'y' || getPic_[0] == 'Y');
             if(!getPic)
             {
                 Console.WriteLine("다음번 5성은 무조건 픽업 캐릭터");
@@ -28,51 +33,35 @@ namespace src
             {
                 Console.WriteLine("기본 확률 업 적용");
             }
-
-            CalProb cp = new CalProb(stack, getPic);
             
             Console.Write("지를 수 있는 가챠 수 > ");
-            int gacha = int.Parse(Console.ReadLine());
+            gacha = int.Parse(Console.ReadLine());
             
             Console.Write("뽑고자 하는 픽업캐 돌파 수(명함 = 1) > ");
-            int ndol = int.Parse(Console.ReadLine());
+            ndol = int.Parse(Console.ReadLine());
 
+            CalProb cp = new CalProb(stack, getPic);
             double result = cp.GetDP(ndol, stack + gacha);
 
             Console.WriteLine("{0}연차 내로 뽑을 확률 = {1}%", gacha, result * 100);
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            /*
-            double mean = 0.0;
-            int i = 1;
-            for(; i <= CalProb.MAX_GACHA; ++i)
-            {
-                //
-                double tmp = cp.GetDP(ndol, i);
-                mean += tmp;
-                if(tmp >= 100.0)    break;
-            }
-            mean /= i;
-
-            Console.WriteLine("평균 : {0}%", mean * 100);
-            */
-=======
-=======
->>>>>>> Stashed changes
-            print(cp, stack, ndol, getPic);
-
         }
 
-        static void print(CalProb cp, int stack, int ndol, bool getPic)
+        static void print_txt(CalProb cp, int stack, int ndol, bool getPic)
         {
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             PrintCS pcs = new PrintCS(cp);
             pcs.PrintTxt(stack, ndol, getPic);
+        }
+
+        static void print_xml(CalProb cp, int stack, int ndol, bool getPic)
+        {
+            PrintCS pcs = new PrintCS(cp);
             pcs.PrintXml(stack, ndol, getPic);
+        }
+
+        static void print_txt_all()
+        {
+            PrintCS pcs = new PrintCS();
+            pcs.PrintTxtAll();
         }
     }
 }
