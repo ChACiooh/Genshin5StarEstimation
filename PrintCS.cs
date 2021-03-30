@@ -113,5 +113,26 @@ namespace src
                 }
             }
         }
+
+        public void PrintXmlAll()
+        {
+            //
+            String path = "./result_xml/";
+            String file_name = path + "result.xml";
+            XmlDocument xdoc = new XmlDocument();
+            XmlNode root = xdoc.CreateElement("Tbl_ChrGachaProb");
+
+            bool getPic = false;
+            for(int stack = 0; stack < CalProb.GACHA_SIZE; ++stack)
+            {
+                for(int ndol = 1; ndol <= CalProb.DOL_SIZE / 2; ++ndol)    
+                {
+                    for(int gacha = 1; gacha + stack <= CalProb.MAX_GACHA; ++gacha)
+                    {
+                        // TODO
+                    }
+                }
+            }
+        }
     }
 }
