@@ -4,6 +4,7 @@ namespace src
 {
     class Program
     {
+        private static PrintCS pcs;
         static void Main(string[] args)
         {
             //input_sequence();
@@ -13,6 +14,7 @@ namespace src
         static void file_sequence()
         {
             print_txt_all();
+            //print_xml_all();
         }
 
         static void input_sequence()
@@ -46,22 +48,28 @@ namespace src
             Console.WriteLine("{0}연차 내로 뽑을 확률 = {1}%", gacha, result * 100);
         }
 
-        static void print_txt(CalProb cp, int stack, int ndol, bool getPic)
+        static void print_txt(int ndol, bool getPic)
         {
-            PrintCS pcs = new PrintCS(cp);
-            pcs.PrintTxt(stack, ndol, getPic);
+            pcs = new PrintCS();
+            pcs.PrintTxt(ndol, getPic);
         }
 
-        static void print_xml(CalProb cp, int stack, int ndol, bool getPic)
+        static void print_xml(int ndol, bool getPic)
         {
-            PrintCS pcs = new PrintCS(cp);
-            pcs.PrintXml(stack, ndol, getPic);
+            pcs = new PrintCS();
+            pcs.PrintXml(ndol, getPic);
         }
 
         static void print_txt_all()
         {
-            PrintCS pcs = new PrintCS();
+            pcs = new PrintCS();
             pcs.PrintTxtAll();
+        }
+
+        static void print_xml_all()
+        {
+            pcs = new PrintCS();
+            pcs.PrintXmlAll();
         }
     }
 }
